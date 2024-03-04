@@ -13,5 +13,7 @@ Uses Open Weather API to collect weather conditions and rainfall amount for the 
 
 #### Setup:
   Create a postgres db & required tables.
-  Configure .env in backend folder including database credentials. 
+
+  Configure .env in backend folder including database credentials, API key, and postal code. 
+
   Configure crontab to run get_rain.py hourly.
