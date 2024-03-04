@@ -1,7 +1,0 @@
-SELECT id
-, datetime
-, datetime AT TIME ZONE 'America/New_York' AS datetime_est
-, amount
-, weather_json
-FROM public.rainfall_10001
-ORDER BY datetime_est DESC;
