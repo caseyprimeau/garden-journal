@@ -1,7 +1,7 @@
 # garden
 
 ## Currently does:
-Weather & rainfall Recording.
+Weather & rainfall recording.
 
 ## Planned Features:
 Garden Journal, Reminders. 
