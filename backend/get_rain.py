@@ -3,7 +3,7 @@
 """
 To Dos:
     x-Get API_KEY from env variable
-    -Get set of zip codes to lookup from db (possibly turn this script into a cloud function)
+    -Get set of postal codes from db
     x-Add Database Insert
     -Add Logging
     -Set Up Notifications for Error Handling
