@@ -33,8 +33,8 @@ WHERE rainfall_test.datetime >= NOW() AT TIME ZONE 'UTC' - INTERVAL '7 day'
 --Returns the moving average of daily rainfall over the past week using CTE
 WITH CTE_Filter As (
 SELECT 
-date_trunc('day', datetime) as datetime,
-SUM(amount) as rainfill_mm
+date_trunc('day', datetime) as datetime
+,SUM(amount) as rainfill_mm
 FROM public.rainfall_test
 WHERE datetime >= NOW() AT TIME ZONE 'UTC' - INTERVAL '7 day' 
 Group BY date_trunc('day', datetime)
