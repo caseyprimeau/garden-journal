@@ -67,7 +67,6 @@ try:
   connection = psycopg2.connect(user=DB_USER,
                                   password=DB_PASSWORD,
                                   host = DB_ADDRESS,
-                                  #host="127.0.0.1",
                                   port="5432",
                                   database="gdnapp")
   cursor = connection.cursor()
