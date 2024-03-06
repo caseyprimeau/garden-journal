@@ -1,10 +1,10 @@
-# garden
+# Garden Journal
 
 ## Currently does:
 Weather & rainfall recording.
 
 ## Planned Features:
-Garden Journal, Reminders. 
+Asset Management, Journal, Reminders. 
 
 ## Backend:
 
