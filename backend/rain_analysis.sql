@@ -30,7 +30,7 @@ FROM public.rainfall_test
 WHERE rainfall_test.datetime >= NOW() AT TIME ZONE 'UTC' - INTERVAL '6 day' 
 
 
---Returns the average daily rainfall over the past week as a single value using CTE
+--Returns the average daily rainfall over the past week as a single value
 WITH CTE_Filter As (
 SELECT 
 date_trunc('day', datetime) as datetime
