@@ -1,6 +1,6 @@
 # Garden Journal
 
-## Currently does:
+## Currently Does:
 Weather & rainfall recording.
 
 ## Planned Features:
