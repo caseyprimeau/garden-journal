@@ -11,26 +11,8 @@ CREATE TABLE IF NOT EXISTS public.rainfall_test
     weather_json json,
     CONSTRAINT rainfall_test_pkey PRIMARY KEY (id)
 )
-
-
---Returns the full dataset of rainfall data since collection began.
-SELECT id
-, datetime
-, datetime AT TIME ZONE 'America/New_York' AS datetime_est
-, amount
-, weather_json
-FROM public.rainfall_test
-ORDER BY datetime_est DESC;
-
---Returns the total rainfall over the past week, compares to 25mm standard plant need
-SELECT
-SUM(amount) as weekly_total,
-GREATEST((25 - SUM(amount)), 0) as water_needed
-FROM public.rainfall_test
-WHERE rainfall_test.datetime >= NOW() AT TIME ZONE 'UTC' - INTERVAL '6 day' 
-
-
---Returns the average daily rainfall over the past week as a single value
+    
+--Returns the average daily rainfall over the past week as a single value:
 WITH CTE_Filter As (
 SELECT 
 date_trunc('day', datetime) as datetime
@@ -45,6 +27,27 @@ CONCAT(MIN (to_char(datetime, 'YYYY-MM-DD'))
 ,MAX (to_char(datetime, 'YYYY-MM-DD'))) as date_range,
 AVG(rainfill_mm)
 From CTE_Filter
+
+--Returns the total rainfall over the past week, compares to 25mm standard plant need:
+SELECT
+SUM(amount) as weekly_total,
+GREATEST((25 - SUM(amount)), 0) as water_needed
+FROM public.rainfall_test
+WHERE rainfall_test.datetime >= NOW() AT TIME ZONE 'UTC' - INTERVAL '6 day' 
+
+--Returns the full set of rainfall data since collection began:
+SELECT id
+, datetime
+, datetime AT TIME ZONE 'America/New_York' AS datetime_est
+, amount
+, weather_json
+FROM public.rainfall_test
+ORDER BY datetime_est DESC;
+
+
+
+
+
 
 
 
