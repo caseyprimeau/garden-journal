@@ -38,7 +38,7 @@ lat = geo.latitude
 lon = geo.longitude  
 
 # Build API request  
-url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}&units=imperial"
+url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}"
 
 try:
   response = requests.get(url)
